@@ -1,7 +1,9 @@
 from models import Dog
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
-def create_table(base):
-    pass
+def create_table(base, engine):
+    base.metadata.create_all(engine)
 
 def save(session, dog):
     pass
